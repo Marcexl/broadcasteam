@@ -68,50 +68,58 @@ const ContactForm = () => {
 
   return (
     <div className='contact-section' id="contact">
-        <div className='mxl-content'>
-            <form onSubmit={handleSubmit}>
+        <div className='formgrid grid mxl-content'>
+          <div className='field col'>
+            <h2>Contactanos</h2>
+          </div>
+          <div className='field col'>
+            <form onSubmit={handleSubmit} className='contact-form'>
                 <div className="p-field">
-                    <label htmlFor="name">Nombre</label>
                     <InputText
                     id="name"
                     name="name"
                     value={formValues.name}
+                    placeholder='Nombre'
                     onChange={handleInputChange}
+                    className='w-full'
                     />
                     <small className="p-error">{formErrors.name}</small>
                 </div>
 
                 <div className="p-field">
-                    <label htmlFor="email">Correo Electrónico</label>
                     <InputText
                     id="email"
                     name="email"
+                    placeholder='Email'
                     value={formValues.email}
                     onChange={handleInputChange}
+                    className='mt-3 w-full'
                     />
                     <small className="p-error">{formErrors.email}</small>
                 </div>
 
                 <div className="p-field">
-                    <label htmlFor="phone">Teléfono</label>
                     <InputMask
                     id="phone"
                     name="phone"
                     mask="(999) 999-9999"
                     value={formValues.phone}
+                    placeholder='Teléfono'
                     onChange={handleInputChange}
+                    className='mt-3 w-full'
                     />
                     <small className="p-error">{formErrors.phone}</small>
                 </div>
 
                 <div className="p-field">
-                    <label htmlFor="message">Mensaje</label>
                     <InputTextarea
                     id="message"
                     name="message"
                     rows={5}
                     value={formValues.message}
+                    placeholder='Dejanos tu mensaje'
                     onChange={handleInputChange}
+                    className='mt-3 w-full'
                     />
                     <small className="p-error">{formErrors.message}</small>
                 </div>
@@ -120,6 +128,7 @@ const ContactForm = () => {
                     <Button type="submit" label="Enviar" />
                 </div>
             </form>
+          </div>
         </div>
     </div>
   );

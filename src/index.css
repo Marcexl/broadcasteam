@@ -210,3 +210,13 @@ ul.result li{
 }
 
 /* CONTACT */
+
+.contact-section{
+  width: 100%;
+  padding: 60px 0;
+  background: #f2f2f2;
+}
+.p-field label{
+  display: block;
+  width: 100%;
+}
