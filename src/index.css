@@ -1,0 +1,58 @@
+body, html{
+  padding: 0;
+  margin: 0;
+  height: auto;  
+}
+
+.p-menubar{
+  background: none;
+  border: none;
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+.p-menubar .p-menubar-root-list > .p-menuitem > .p-menuitem-link:not(.p-disabled) .p-menuitem-text{
+  color: white;
+  display: block;
+  width: 100%;
+  padding: 0.5rem 0;
+}
+
+.p-menubar .p-menubar-root-list > .p-menuitem > .p-menuitem-link:not(.p-disabled):hover .p-menuitem-text{
+  color: purple;
+  display: block;
+
+}
+
+.p-menubar .p-menubar-root-list > .p-menuitem > .p-menuitem-link:not(.p-disabled){
+  background: none;
+  border: none;
+  border-bottom: 1px solid transparent;
+  border-radius: 0;
+  padding: 0;
+  margin: 0 15px;
+}
+
+.p-menubar .p-menubar-root-list > .p-menuitem > .p-menuitem-link:not(.p-disabled):hover{
+  background: none;
+  border: none;
+  border-bottom: 1px solid purple;
+  border-radius: 0;
+}
+
+#pr_id_1_2 a{
+  border-bottom: none!important;
+}
+
+.p-menubar .p-menubar-root-list > .p-menuitem > .p-menuitem-link:focus{
+  box-shadow: none;
+}
+
+.video-container{
+  overflow: hidden;
+}
+
+.video-container video{
+  width: 100%;
+}
+
