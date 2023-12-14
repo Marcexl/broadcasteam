@@ -9,6 +9,7 @@ body, html{
 }
 
 .mxl-content{
+  width: 1440px;
   max-width: 1440px;
   margin: 0 auto;
 }
@@ -213,10 +214,74 @@ ul.result li{
 
 .contact-section{
   width: 100%;
+  min-height: 100vh;
   padding: 60px 0;
-  background: #f2f2f2;
+  background: #e5d7ff;
+  display: flex;
+  align-items: center;
 }
+
+.contact-section .mxl-content{
+  width: 1200px;
+  max-width: 1200px;
+}
+
+.contact-section h2{
+  text-transform: uppercase;
+}
+
 .p-field label{
   display: block;
   width: 100%;
+}
+
+.social-items{
+  font-size: 1.2rem;
+}
+
+.social-items a{
+  color: rgb(97, 65, 147);
+  text-decoration: none;
+}
+
+.social-items span{
+  display: inline-block;
+  width: 150px;
+}
+
+.p-inputtext{
+  background: transparent;
+  border: none;
+  border-radius: 0;
+  border-bottom: 1px solid #CCC;
+}
+
+.p-button{
+  background: rgb(97, 65, 147);
+}
+
+/* FOOTER */
+.footer-logo{
+  position: relative;
+  margin-left: -33px;
+}
+.footer{
+  padding: 0;
+  background-color: black;
+  height: 60px;
+  display: flex;
+  align-items: center;
+}
+.footer p{
+  margin: 0;
+  color: white;
+  padding: 0;
+}
+.footer .mxl-content{
+  padding: 0;
+}
+
+.footer a{
+  color: #5e5e5e;
+  text-decoration: none;
 }

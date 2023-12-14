@@ -4,7 +4,7 @@ import { InputText } from 'primereact/inputtext';
 import { InputMask } from 'primereact/inputmask';
 import { InputTextarea } from 'primereact/inputtextarea';
 import { Button } from 'primereact/button';
-
+import footerLogo from './footer-logo.svg';
 const ContactForm = () => {
   // Estados para almacenar los valores del formulario y los errores
   const [formValues, setFormValues] = useState({
@@ -70,9 +70,21 @@ const ContactForm = () => {
     <div className='contact-section' id="contact">
         <div className='formgrid grid mxl-content'>
           <div className='field col'>
-            <h2>Contactanos</h2>
+            <h2 className='mb-5'>Contactanos</h2>
+            <p className='social-items'>
+              <i className='pi pi-whatsapp pr-1'></i> <span>Whatsapp: </span><a rel="nofollow" href="https://wa.me/+5491124012362">+54 9 11 2401-2362</a>
+            </p>
+            <p className='social-items'>
+              <i className='pi pi-envelope pr-2'></i><span>Email: </span><a rel="nofollow" href="mailto:hola@agencybroadcast.com">hola@agencybroadcast.com</a>
+            </p>
+            <p className='social-items'>
+              <i className='pi pi-instagram pr-2'></i><span>Seguinos: </span><a rel="nofollow" href="#">@agencybroadcast</a>
+            </p>
+            <img src={footerLogo} alt="footer logo" className='footer-logo mt-5'/>
+
           </div>
           <div className='field col'>
+            <h2 className='mb-5'>O envianos un mensaje</h2>
             <form onSubmit={handleSubmit} className='contact-form'>
                 <div className="p-field">
                     <InputText
@@ -124,8 +136,8 @@ const ContactForm = () => {
                     <small className="p-error">{formErrors.message}</small>
                 </div>
 
-                <div className="p-field">
-                    <Button type="submit" label="Enviar" />
+                <div className="p-field mt-5">
+                    <Button type="submit" label="Enviar" className='w-full' />
                 </div>
             </form>
           </div>
