@@ -1,10 +1,19 @@
-import './App.css';
+import About from "./Components/About";
+import Contact from "./Components/Contact";
+import Header from "./Components/Header";
+import Services from "./Components/Services";
+import Video from "./Components/Video";
 
 function App() {
   return (
-    <div className='text-sm'>
-      <h1>Hello world!</h1>
-    </div>
+    <>
+      <Header />
+      <Video />
+      <About />
+      <Services />
+      <Contact />
+      <footer />
+    </>
   );
 }
 
