@@ -3,6 +3,7 @@ import Contact from "./Components/Contact";
 import Header from "./Components/Header";
 import Services from "./Components/Services";
 import Video from "./Components/Video";
+import Footer from "./Components/Footer";
 
 function App() {
   return (
@@ -12,7 +13,7 @@ function App() {
       <About />
       <Services />
       <Contact />
-      <footer />
+      <Footer />
     </>
   );
 }

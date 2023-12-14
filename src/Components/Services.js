@@ -5,18 +5,25 @@ import Tilt from 'react-parallax-tilt';
 function Services() {
 
     const [result, setResult] = useState([]);
+    const [idService, setIdService] = useState(null);
 
     const showDataById = (id) => {
-        const data = [
-            {id:1, items:['Lanzamientos de producto','Stands','Proyecciones y realidad aumentada','IA recreativo',  'Eventos corporativos y comerciales']},
-            {id:2, items:['Streaming y satelitales','Estudios y exteriores']},
-            {id:3, items:['Rodajes','Postproducción','Arte y escenografía ']},
-            {id:4, items:['Animación','Diseño gráfico','Desarrollos web y apps','Redes sociales y MKT digital']},
-        ];
+        setIdService(id);
+        if(idService !== id) {
+            setResult([]);
+            const data = [
+                {id:1, items:['Lanzamientos de producto','Stands','Proyecciones y realidad aumentada','IA recreativo',  'Eventos corporativos y comerciales']},
+                {id:2, items:['Streaming y satelitales','Estudios y exteriores']},
+                {id:3, items:['Rodajes','Postproducción','Arte y escenografía ']},
+                {id:4, items:['Animación','Diseño gráfico','Desarrollos web y apps','Redes sociales y MKT digital']},
+            ];
+            const res = data.find(t => t.id === id);
 
-        const res = data.find(t => t.id === id);
-        setResult(res.items);
-        console.log(res.items);
+            setTimeout( () => {
+                setResult(res.items);
+            },200);
+        }
+
     };
 
 
@@ -49,15 +56,15 @@ function Services() {
                     </div>
                 </div>
             </div>
-            <div className="field col">
+            <div className="field col col-result">
                 <ul className='result'>
-                    { 
-                        result.length === 0 ? 
-                            result.map(t => {
-                                return <li>t</li>  
-                            }) 
-                            : 
-                            <li>no results</li>
+                    {
+                        result.length > 0 ?
+                            result.map((i, k) => {
+                                return <li className={`service-item s-i-${k}`} key={k}>{i}</li>
+                                })
+                            :
+                            ""
                     }
                 </ul>
             </div>

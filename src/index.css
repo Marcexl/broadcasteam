@@ -4,7 +4,7 @@
 body, html{
   padding: 0;
   margin: 0;
-  height: auto;  
+  height: auto;
   font-family: 'DM Sans', sans-serif;
 }
 
@@ -12,6 +12,8 @@ body, html{
   max-width: 1440px;
   margin: 0 auto;
 }
+
+/* MENU */
 
 .p-menubar{
   background: none;
@@ -58,6 +60,8 @@ body, html{
   box-shadow: none;
 }
 
+/* VIDEO */
+
 .video-container{
   overflow: hidden;
 }
@@ -66,41 +70,16 @@ body, html{
   width: 100%;
 }
 
+/* ABOUT */
+
 .about-section{
   background-color: rgb(97, 65, 147);
-  /*background: rgb(161,84,213);
-  background: linear-gradient(137deg, rgba(161,84,213,1) 0%, rgba(97,65,147,1) 100%);*/
 }
 
 .about-section-container{
   min-height: 100vh;
   color: white;
 }
-
-.p-card-title{
-  color: rgb(235, 19, 71);
-}
-
-.card-service{
-  min-height: 250px;
-  display: flex;
-  align-content: center;
-  flex-wrap: wrap;
-  cursor: pointer;
-  transition: all .3s;
-  transform: scale(1);
-}
-
-.card-service:hover{
- background: rgb(97, 65, 147, 0.2);
- transform: scale(0.9);
-}
-
-ul{
-  list-style-position: inside;
-  padding: 0;
-}
-
 .broad-title{
   transform:scaleY(1.8);
   font-size: 10rem;
@@ -138,9 +117,96 @@ ul{
   padding-bottom: 60px;
 }
 
+/* SERVICES */
+
 .services-section{
   min-height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
 }
+
+.p-card-title{
+  color: rgb(235, 19, 71);
+}
+
+.card-service{
+  min-height: 250px;
+  display: flex;
+  align-content: center;
+  flex-wrap: wrap;
+  cursor: pointer;
+  transition: all .3s;
+  transform: scale(1);
+}
+
+.card-service:hover{
+ background: rgb(97, 65, 147, 0.2);
+ transform: scale(0.9);
+}
+
+ul.result{
+  list-style: none;
+  list-style-position: inside;
+  padding: 0;
+  padding-left: 45px;
+}
+
+ul.result li{
+  padding: 10px 0;
+  text-transform: uppercase;
+  font-size: 2rem;
+}
+
+.service-item{
+  transform: translateX(-100%);
+  opacity: 0;
+  animation-name: fadeInLeft;
+  animation-duration: .3s;
+  animation-timing-function: ease-in-out;
+  animation-fill-mode: forwards;
+  color: rgb(235, 19, 71);
+}
+
+.s-i-0{
+  animation-delay: .3s;
+}
+
+.s-i-1{
+  animation-delay: .6s;
+}
+
+.s-i-2{
+  animation-delay: .9s;
+}
+
+.s-i-3{
+  animation-delay: 1.2s;
+}
+
+.s-i-4{
+  animation-delay: 1.5s;
+}
+
+@keyframes fadeInLeft {
+  from{
+    opacity: 0;
+    transform: translateX(-100%);
+  } to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.col-result{
+  height: 500px;
+  overflow: hidden;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  border:1px solid red;
+  border-radius: 1rem;
+  box-sizing: border-box;
+}
+
+/* CONTACT */
