@@ -4,7 +4,7 @@ function Video() {
     return(
         <>
         <div className='w-full relative h-screen video-container' id="home">
-            <video muted={true} autoPlay={true} loop={true}>
+            <video muted={true} autoPlay={true} loop={true} controls={true}>
                 <source src={video} type="video/mp4"></source>
                 Your browser does not support the video tag.
             </video>

@@ -15,6 +15,15 @@ body, html{
 }
 
 /* MENU */
+.scrolled{
+  box-shadow: 3px 3px 5px rgb(0 ,0, 0, 0.2);
+}
+
+.scrolled,
+.scrolled .p-menubar{
+  background: #f2f2f2;
+  transition: all .3s;
+}
 
 .p-menubar{
   background: none;
@@ -31,10 +40,14 @@ body, html{
   transition: all .3s;
 }
 
-.p-menubar .p-menubar-root-list > .p-menuitem > .p-menuitem-link:not(.p-disabled):hover .p-menuitem-text{
-  color: purple;
-  display: block;
+.scrolled .p-menubar .p-menubar-root-list > .p-menuitem > .p-menuitem-link:not(.p-disabled) .p-menuitem-text{
+  color: black;
+}
 
+.scrolled .p-menubar .p-menubar-root-list > .p-menuitem > .p-menuitem-link:not(.p-disabled):hover .p-menuitem-text,
+.p-menubar .p-menubar-root-list > .p-menuitem > .p-menuitem-link:not(.p-disabled):hover .p-menuitem-text{
+  color: rgb(97, 65, 147);
+  display: block;
 }
 
 .p-menubar .p-menubar-root-list > .p-menuitem > .p-menuitem-link:not(.p-disabled){
@@ -49,11 +62,12 @@ body, html{
 .p-menubar .p-menubar-root-list > .p-menuitem > .p-menuitem-link:not(.p-disabled):hover{
   background: none;
   border: none;
-  border-bottom: 1px solid purple;
+  border-bottom: 1px solid rgb(97, 65, 147);
   border-radius: 0;
 }
 
-#pr_id_1_2 a{
+.scrolled #pr_id_2_2 a,
+#pr_id_2_2 a{
   border-bottom: none!important;
 }
 
@@ -69,6 +83,7 @@ body, html{
 
 .video-container video{
   width: 100%;
+  margin-top: -6%;
 }
 
 /* ABOUT */
@@ -81,6 +96,7 @@ body, html{
   min-height: 100vh;
   color: white;
 }
+
 .broad-title{
   transform:scaleY(1.8);
   font-size: 10rem;
@@ -97,7 +113,7 @@ body, html{
   width: 1440px;
   background-color: rgb(97, 65, 147);
   z-index: 2;
-  font-size: 1.4rem;
+  font-size: 1.5rem;
   padding: 30px 0;
   line-height: 2rem;
   text-transform: uppercase;

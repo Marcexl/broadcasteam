@@ -1,9 +1,10 @@
 
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Menubar } from 'primereact/menubar';
 import Logo from './logo.png';
 
 function Header() {
+    const [scrolled, setScrolled] = useState("");
     const items = [
         {
             label: 'Servicios',
@@ -35,9 +36,23 @@ function Header() {
           section.scrollIntoView({ behavior: 'smooth' });
         }
     };
+
+    const addHeaderClass = () => {
+        window.addEventListener('scroll', () => {
+            if(window.scrollY < 10){
+                setScrolled('');
+            }else {
+                setScrolled('scrolled');
+            }
+        });
+    }
+
+    useEffect( () => {
+        addHeaderClass();
+    },[])
     
     return (
-        <div className="card fixed top-0 left-0 w-full z-1">
+        <div className={`card fixed top-0 left-0 w-full z-3 ${scrolled}`}>
             <Menubar className="justify-content-between mxl-content" model={items} start={start} />
         </div>
     )
