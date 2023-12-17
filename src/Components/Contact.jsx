@@ -1,15 +1,20 @@
 // Importa las bibliotecas y componentes necesarios
-import React, { useState } from 'react';
+import React, { useState, useRef} from 'react';
 import { InputText } from 'primereact/inputtext';
 import { InputNumber } from 'primereact/inputnumber';
 import { InputTextarea } from 'primereact/inputtextarea';
 import { Button } from 'primereact/button';
 import footerLogo from './footer-logo.svg';
+import { Toast } from 'primereact/toast';
 import { useTranslation } from 'react-i18next';
+import axios from 'axios';
 
 const ContactForm = () => {
-  const { t } = useTranslation();
+  const toast = useRef(null);
+  const [loading, setLoading] = useState(false);
 
+  const { t } = useTranslation();
+  const apiEndpoint = process.env.REACT_APP_API_ENDPOINT;
   // Estados para almacenar los valores del formulario y los errores
   const [formValues, setFormValues] = useState({
     name: '',
@@ -28,13 +33,28 @@ const ContactForm = () => {
   };
 
   // Función para manejar el envío del formulario
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
+    setLoading(true);
     
     e.preventDefault();
     // Aquí puedes realizar la lógica de envío o validación adicional si es necesario
-    const res = validateForm();
-    if(res){
-      
+    const valid = validateForm();
+    if(valid){
+      const data = {
+        name: formValues.name,
+        email: formValues.email,
+        phone: formValues.phone,
+        message: formValues.message,
+      };
+
+      const res = await axios.post(`${apiEndpoint}/mail.php`, data);
+      if(res.data.success){
+        setLoading(false);
+        toast.current.show({ severity: 'success', summary: 'Success', detail: 'Gracias. Se ha enviado el mensaje!' })
+      } else {
+        setLoading(false);
+        toast.current.show({ severity: 'error', summary: 'Error', detail: res.data.error })
+      }
     }
   };
 
@@ -151,8 +171,10 @@ const ContactForm = () => {
             </div>
 
             <div className="p-field mt-5">
-              <Button type="submit" label={t('contact.form.submit')} className='w-full' />
+              <Button type="submit" label={t('contact.form.submit')} className='w-full' loading={loading} />
             </div>
+            <Toast ref={toast} position="bottom-right"/>
+
           </form>
         </div>
       </div>
