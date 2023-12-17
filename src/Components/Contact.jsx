@@ -5,7 +5,11 @@ import { InputNumber } from 'primereact/inputnumber';
 import { InputTextarea } from 'primereact/inputtextarea';
 import { Button } from 'primereact/button';
 import footerLogo from './footer-logo.svg';
+import { useTranslation } from 'react-i18next';
+
 const ContactForm = () => {
+  const { t } = useTranslation();
+
   // Estados para almacenar los valores del formulario y los errores
   const [formValues, setFormValues] = useState({
     name: '',
@@ -41,28 +45,28 @@ const ContactForm = () => {
 
     // Validación del campo de nombre
     if (!formValues.name.trim()) {
-      newErrors.name = 'El nombre es obligatorio';
+      newErrors.name = t('contact.form.required');
       isValid = false;
     }
 
     // Validación del campo de correo electrónico
     if (!formValues.email.trim()) {
-      newErrors.email = 'Ingrese un email valido';
+      newErrors.email = t('contact.form.valid');
       isValid = false;
     } else if (!/\S+@\S+\.\S+/.test(formValues.email)) {
-      newErrors.email = 'Ingrese un email valido';
+      newErrors.email = t('contact.form.valid');
       isValid = false;
     }
 
     // Validación del campo de teléfono
     if (!formValues.phone) {
-      newErrors.phone = 'Ingrese un teléfono válido';
+      newErrors.phone = t('contact.form.required');
       isValid = false;
     }
 
     // Validación del campo de mensaje
     if (!formValues.message.trim()) {
-      newErrors.message = 'El mensaje es obligatorio';
+      newErrors.message = t('contact.form.required');
       isValid = false;
     }
 
@@ -74,7 +78,7 @@ const ContactForm = () => {
     <div className='contact-section' id="contact">
       <div className='formgrid grid mxl-content'>
         <div className='field col'>
-          <h2 className='mb-5'>Contactanos</h2>
+          <h2 className='mb-5'>{t('contact.leftTitle')}</h2>
           <p className='social-items'>
             <i className='pi pi-whatsapp pr-1'></i>
             <span>Whatsapp: </span>
@@ -87,21 +91,21 @@ const ContactForm = () => {
           </p>
           <p className='social-items'>
             <i className='pi pi-instagram pr-2'></i>
-            <span>Seguinos: </span>
+            <span>{t('contact.followUs')}: </span>
             <a rel="nofollow" href="#">@agencybroadcast</a>
           </p>
           <img src={footerLogo} alt="footer logo" className='footer-logo mt-5' />
 
         </div>
         <div className='field col'>
-          <h2 className='mb-5'>O envianos un mensaje</h2>
+          <h2 className='mb-5'>{t('contact.rightTitle')}</h2>
           <form onSubmit={handleSubmit} className='contact-form'>
             <div className="p-field">
               <InputText
                 id="name"
                 name="name"
                 value={formValues.name}
-                placeholder='Nombre'
+                placeholder={t('contact.form.name')}
                 onChange={handleInputChange}
                 className='w-full'
               />
@@ -112,7 +116,7 @@ const ContactForm = () => {
               <InputText
                 id="email"
                 name="email"
-                placeholder='Email'
+                placeholder={t('contact.form.email')}
                 value={formValues.email}
                 onChange={handleInputChange}
                 className='mt-3 w-full'
@@ -125,7 +129,7 @@ const ContactForm = () => {
                 id="phone"
                 name="phone"
                 value={formValues.phone}
-                placeholder='Teléfono'
+                placeholder={t('contact.form.phone')}
                 onValueChange={handleInputChange}
                 useGrouping={false}
                 className='mt-3 w-full'
@@ -139,7 +143,7 @@ const ContactForm = () => {
                 name="message"
                 rows={5}
                 value={formValues.message}
-                placeholder='Dejanos tu mensaje'
+                placeholder={t('contact.form.message')}
                 onChange={handleInputChange}
                 className='mt-3 w-full'
               />
@@ -147,7 +151,7 @@ const ContactForm = () => {
             </div>
 
             <div className="p-field mt-5">
-              <Button type="submit" label="Enviar" className='w-full' />
+              <Button type="submit" label={t('contact.form.submit')} className='w-full' />
             </div>
           </form>
         </div>
