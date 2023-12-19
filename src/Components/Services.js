@@ -6,7 +6,7 @@ import { motion } from "framer-motion";
 
 
 function Services() {
-    
+
     const draw = {
         hidden: { pathLength: 0, opacity: 0 },
         visible: (i) => {
@@ -21,7 +21,7 @@ function Services() {
         };
         }
     };
-  
+
     const { t } = useTranslation();
 
     const [result, setResult] = useState([]);
@@ -32,10 +32,28 @@ function Services() {
         if(idService !== id) {
             setResult([]);
             const data = [
-                {id:1, items:[t('services.events.itemOne'),t('services.events.itemTwo'),t('services.events.itemThree'),t('services.events.itemFour'),t('services.events.itemFive'),]},
-                {id:2, items:[t('services.transmissions.itemOne'),t('services.transmissions.itemTwo')]},
-                {id:3, items:[t('services.visual.itemOne'),t('services.visual.itemTwo'),t('services.visual.itemThree')]},
-                {id:4, items:[t('services.multimedia.itemOne'),t('services.multimedia.itemTwo'),t('services.multimedia.itemThree'),]},
+                {id:1, items:[
+                    t('services.events.itemOne'),
+                    t('services.events.itemTwo'),
+                    t('services.events.itemThree'),
+                    t('services.events.itemFour'),
+                    t('services.events.itemFive'),
+                ]},
+                {id:2, items:[
+                    t('services.transmissions.itemOne'),
+                    t('services.transmissions.itemTwo')
+                ]},
+                {id:3, items:[
+                    t('services.visual.itemOne'),
+                    t('services.visual.itemTwo'),
+                    t('services.visual.itemThree')
+                ]},
+                {id:4, items:[
+                    t('services.multimedia.itemOne'),
+                    t('services.multimedia.itemTwo'),
+                    t('services.multimedia.itemThree'),
+                    t('services.multimedia.itemFour'),
+                ]},
             ];
             const res = data.find(t => t.id === id);
             cleanClass(id);
