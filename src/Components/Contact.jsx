@@ -4,7 +4,6 @@ import { InputText } from 'primereact/inputtext';
 import { InputNumber } from 'primereact/inputnumber';
 import { InputTextarea } from 'primereact/inputtextarea';
 import { Button } from 'primereact/button';
-import footerLogo from './footer-logo.svg';
 import { Toast } from 'primereact/toast';
 import { useTranslation } from 'react-i18next';
 import axios from 'axios';
@@ -35,7 +34,7 @@ const ContactForm = () => {
   // Función para manejar el envío del formulario
   const handleSubmit = async (e) => {
     setLoading(true);
-    
+
     e.preventDefault();
     // Aquí puedes realizar la lógica de envío o validación adicional si es necesario
     const valid = validateForm();
@@ -109,13 +108,6 @@ const ContactForm = () => {
             <span>Email: </span>
             <a rel="nofollow" href="mailto:hola@agencybroadcast.com">hola@agencybroadcast.com</a>
           </p>
-          <p className='social-items'>
-            <i className='pi pi-instagram pr-2'></i>
-            <span>{t('contact.followUs')}: </span>
-            <a rel="nofollow" href="#">@agencybroadcast</a>
-          </p>
-          <img src={footerLogo} alt="footer logo" className='footer-logo mt-5' />
-
         </div>
         <div className='field col'>
           <h2 className='mb-5'>{t('contact.rightTitle')}</h2>

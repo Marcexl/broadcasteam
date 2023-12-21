@@ -280,7 +280,7 @@ ul.result li{
 /* FOOTER */
 .footer-logo{
   position: relative;
-  margin-left: -33px;
+  max-width: 600px;
 }
 .footer{
   padding: 0;
@@ -304,6 +304,36 @@ ul.result li{
 }
 
 /* responsive */
+@media screen and (max-width: 1800px){
+  .h-screen{
+    height: auto!important;
+  }
+}
+
+@media screen and (max-width: 1440px){
+  .mxl-content{
+    max-width: 1200px;
+  }
+
+  .broad-subtitle{
+    width: 100%;
+  }
+}
+
+
+@media screen and (max-width: 1219px){
+  .contact-section .mxl-content,
+  .mxl-content{
+    width: 100%;
+    max-width: 100%;
+    padding: 15px;
+  }
+
+  .broad-subtitle{
+    font-size: 1.2rem;
+  }
+}
+
 @media screen and (max-width: 1024px){
   .header .mxl-content{
     padding: 0 15px!important;
@@ -324,6 +354,10 @@ ul.result li{
   }
 
   /* services */
+  .services-section{
+    min-height: auto;
+    padding: 60px 0;
+  }
   .card-service {
     min-height: 80px;
   }
@@ -335,7 +369,7 @@ ul.result li{
   .p-card .p-card-title{
     font-size: 1rem;
   }
-  
+
   ul.result{
     padding-left: 5px;
   }
@@ -345,9 +379,15 @@ ul.result li{
   }
 
   /* about */
-  .social-items,
+  .about-section-container{
+    min-height: auto;
+    padding: 60px 0;
+  }
+
   .broad-subtitle{
     font-size: 1rem;
+    padding: 0 10px;
+    text-align: left!important;
   }
 
   .broad-subtitle p{
@@ -356,14 +396,25 @@ ul.result li{
   }
 
   /* contact */
+  .social-items{
+    font-size: 0.9rem;
+  }
+  .contact-section{
+    min-height: auto;
+    padding: 60px 0;
+  }
   .social-items span{
-    width: 100px;
+    width: 80px;
   }
 
   /* footer */
   .footer,
   .footer p{
     font-size: 0.8rem;
+  }
+
+  .footer p{
+    padding: 10px;
   }
 
   .gap-5 {
@@ -380,31 +431,31 @@ ul.result li{
   }
 }
 
-@media screen and (max-width: 1219px){
-  .contact-section .mxl-content,
-  .mxl-content{
-    width: 100%;
-    max-width: 100%;
-    padding: 15px;
+@media screen and (max-width: 360px){
+  .mxl-content.services-section{
+    padding: 10px;
+  }
+
+  .gap-5{
+    gap: 0.5rem!important;
+  }
+
+  ul.result{
+    padding-left: 1px;
+  }
+
+  ul.result li {
+    font-size: 0.9rem;
+  }
+  .contact-section {
+    padding: 10px 0;
+  }
+
+  .contact-section h2{
+    font-size: 1.3rem;
   }
 
   .broad-subtitle{
-    font-size: 1.2rem;
-  }
-}
-
-@media screen and (max-width: 1440px){
-  .mxl-content{
-    max-width: 1200px;
-  }
-
-  .broad-subtitle{
-    width: 100%;
-  }
-}
-
-@media screen and (max-width: 1800px){
-  .h-screen{
-    height: auto!important;
+    padding: 0 15px;
   }
 }
