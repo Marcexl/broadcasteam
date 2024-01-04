@@ -6,6 +6,7 @@ body, html{
   margin: 0;
   height: auto;
   font-family: 'DM Sans', sans-serif;
+  scroll-behavior: smooth;
 }
 
 .mxl-content{
@@ -387,7 +388,6 @@ ul.result li{
   .broad-subtitle{
     font-size: 1rem;
     padding: 0 10px;
-    text-align: left!important;
   }
 
   .broad-subtitle p{

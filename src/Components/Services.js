@@ -3,10 +3,8 @@ import { useEffect, useState } from 'react';
 import Tilt from 'react-parallax-tilt';
 import { useTranslation } from 'react-i18next';
 import { motion } from "framer-motion";
-
-
+import i18n from '../i18n';
 function Services() {
-
     const draw = {
         hidden: { pathLength: 0, opacity: 0 },
         visible: (i) => {
@@ -23,50 +21,46 @@ function Services() {
     };
 
     const { t } = useTranslation();
-
     const [result, setResult] = useState([]);
-    const [idService, setIdService] = useState(null);
+    const [idService, setIdService] = useState(1);
 
     const showDataById = (id) => {
         setIdService(id);
-        if(idService !== id) {
-            setResult([]);
-            const data = [
-                {id:1, items:[
-                    t('services.events.itemOne'),
-                    t('services.events.itemTwo'),
-                    t('services.events.itemThree'),
-                    t('services.events.itemFour'),
-                    t('services.events.itemFive'),
-                ]},
-                {id:2, items:[
-                    t('services.transmissions.itemOne'),
-                    t('services.transmissions.itemTwo')
-                ]},
-                {id:3, items:[
-                    t('services.visual.itemOne'),
-                    t('services.visual.itemTwo'),
-                    t('services.visual.itemThree')
-                ]},
-                {id:4, items:[
-                    t('services.multimedia.itemOne'),
-                    t('services.multimedia.itemTwo'),
-                    t('services.multimedia.itemThree'),
-                    t('services.multimedia.itemFour'),
-                ]},
-            ];
-            const res = data.find(t => t.id === id);
-            cleanClass(id);
-            setTimeout( () => {
-                setResult(res.items);
-            },200);
-        }
-
+        setResult([]);
+        let data = [
+            {id:1, items:[
+                t('services.events.itemOne'),
+                t('services.events.itemTwo'),
+                t('services.events.itemThree'),
+                t('services.events.itemFour'),
+                t('services.events.itemFive'),
+            ]},
+            {id:2, items:[
+                t('services.transmissions.itemOne'),
+                t('services.transmissions.itemTwo')
+            ]},
+            {id:3, items:[
+                t('services.visual.itemOne'),
+                t('services.visual.itemTwo'),
+                t('services.visual.itemThree')
+            ]},
+            {id:4, items:[
+                t('services.multimedia.itemOne'),
+                t('services.multimedia.itemTwo'),
+                t('services.multimedia.itemThree'),
+                t('services.multimedia.itemFour'),
+            ]},
+        ];
+        const res = data.find(t => t.id === id);
+        cleanClass(id);
+        setTimeout( () => {
+            setResult(res.items);
+        },200);
     };
 
     useEffect( () => {
-        showDataById(1);
-    },[]);
+        showDataById(idService);
+    },[i18n.language]);
 
     return(
         <>

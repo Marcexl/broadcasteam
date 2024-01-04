@@ -7,16 +7,17 @@ import { useTranslation } from 'react-i18next';
 
 function Header() {
     const { t } = useTranslation();
-
     const [scrolled, setScrolled] = useState("");
+    
     const items = [
         {
             label: t('header.services'),
-            command: () => navigateToSection('services'),
+            //url: 'https://agencybroadcast.com#services'
+            command: () => goToLink(1)
         },
         {
             label: t('header.contact'),
-            command: () => navigateToSection('contact'),
+            command: () => goToLink(2)
         },
         {
             label: '',
@@ -24,24 +25,17 @@ function Header() {
             items: [
                 {
                     label: 'EN',
-                    command: () => i18n.changeLanguage('en')
+                    command: () => changeLang('en')
                 },
                 {
                     label: 'ES',
-                    command: () => i18n.changeLanguage('es')
+                    command: () => changeLang('es')
                 }
             ]
         },
     ];
 
     const start = <img alt="logo" src={Logo} height="80" className="mr-2 header-logo"></img>;
-
-    const navigateToSection = (sectionId) => {
-        const section = document.getElementById(sectionId);
-        if (section) {
-          section.scrollIntoView({ behavior: 'smooth' });
-        }
-    };
 
     const addHeaderClass = () => {
         window.addEventListener('scroll', () => {
@@ -51,6 +45,23 @@ function Header() {
                 setScrolled('scrolled');
             }
         });
+    }
+
+    const changeLang = (lang) => {
+        i18n.changeLanguage(lang);
+    }
+
+    const goToLink = (id) => {
+        const btn = document.getElementById(id === 1 ? 'services' : 'contact');
+
+        btn.addEventListener("click", function() {
+            var i = 10;
+            var int = setInterval(function() {
+              window.scrollTo(0, i);
+              i += 10;
+              if (i >= 200) clearInterval(int);
+            }, 20);
+          })
     }
 
     useEffect( () => {

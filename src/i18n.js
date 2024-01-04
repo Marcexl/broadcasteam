@@ -15,8 +15,8 @@ i18n
           about:{
             lineOne: 'We believe that creativity can break through any challenge,',
             lineTwo: 'and we are passionate about providing useful and effective solutions.',
-            lineThree: 'We work closely with our clients, generating constant feedback',
-            lineFour: 'which allows us to optimize resourcesk',
+            lineThree: 'We work closely with our clients generating constant feedback',
+            lineFour: 'which allows us to optimize resources',
             lineFive: 'learning and improving in each project.'
           },
           services:{
@@ -49,7 +49,7 @@ i18n
           },
           contact:{
             leftTitle:'Contact us',
-            rightTitle:'Or send message',
+            rightTitle:'Or send a message',
             followUs: 'Follow us',
                 form: {
                     name: 'Name',
@@ -72,7 +72,7 @@ i18n
             about:{
                 lineOne: 'Creemos que la creatividad puede superar cualquier obstáculo,',
                 lineTwo: 'nos apasiona brindar soluciones prácticas y eficientes.',
-                lineThree: 'Trabajamos en equipo con nuestros clientes generando un feedback constante',
+                lineThree: 'Trabajamos en equipo con nuestros clientes generando un feedback constante.',
                 lineFour: 'esto nos permite optimizar recursos,',
                 lineFive: 'aprender y mejorar en cada proyecto.'
             },
